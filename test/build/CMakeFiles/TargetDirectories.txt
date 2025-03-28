@@ -1,0 +1,3 @@
+/home/hahaha/work/blog/test/build/CMakeFiles/hello.dir
+/home/hahaha/work/blog/test/build/CMakeFiles/edit_cache.dir
+/home/hahaha/work/blog/test/build/CMakeFiles/rebuild_cache.dir

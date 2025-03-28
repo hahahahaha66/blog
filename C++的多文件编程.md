@@ -80,3 +80,20 @@
 
 #pragma once 是非标准的，但被几乎所有主流编译器（GCC、Clang、MSVC）支持，或许一些老旧的编译器不支持，但代码更简洁，可能提高编译速度
 ***
+### 使用cmake来编译
+
+在引入了多文件后，编译链接就变成一件麻烦事，尤其是在一些公司的大项目上，通常都有上百个文件要链接编译，那输入起来就太麻烦了，于是就要使用项目构建工具，这里介绍cmake
+>CMake 是个一个开源的跨平台自动化建构系统，用来管理软件建置的程序，并不依赖于某特定编译器，并可支持多层目录、多个应用程序与多个函数库。CMake 通过使用简单的配置文件 CMakeLists.txt，自动生成不同平台的构建文件（如 Makefile、Ninja 构建文件、Visual Studio 工程文件等），简化了项目的编译和构建过程。CMake 本身不是构建工具，而是生成构建系统的工具，它生成的构建系统可以使用不同的编译器和工具链。
+基本的工作流程
++ 编写CMakeLists.txt文件——定义项目，源文件，编译选项等
++ 创建构建目录——建议在单独的目录中执行构建
++ 运行cmake命令——生成Makefile或其他构建文件
++ 使用make进行编译——执行构建文件
+
+    //一个简单的CMakeLists.txt
+    cmake_minimum_required(VERSION 3.10)  # 指定最低 CMake 版本
+    project(HelloCMake)                   # 定义项目名称
+
+    add_executable(hello main.cpp)         # 生成可执行文件 hello
+
+还可以在CMakeLists.txt中加入其他链接其他库，有需要可以自行查找
